@@ -3,7 +3,7 @@ import json
 from PIL import Image, ImageFont, ImageDraw 
 from datetime import date
 
-api_key = "c54f07b0d8562b57525ca0fd37a1aae2"
+api_key = "c54f07b0d8562b57525xxxxxxxxxxxxx" #Update Your API Here
 position = [300, 430, 555, 690, 825]
 
 uk_list = ["London", "Manchester", "Edinburgh", "Bristol", "Birmingham"]
@@ -29,7 +29,7 @@ for country in country_list:
 
     index = 0
     for city in country:
-        url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid=86b5f4ae4c81f6acd92ac4441246595c&units=metric".format(city)
+        url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric".format(city, api_key)
         response = requests.get(url)
         data = json.loads(response.text)
 
